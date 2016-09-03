@@ -16,7 +16,7 @@ function get_reason(eventEmitter){
         let x=JSON.parse(JSON.parse(data).text);
         let reason=x.d[6];
         let testcase=x.d[8];
-        if(testcase>counter){
+        if(testcase>counter || reason!='TESTING'){
           counter=testcase;
         if(!done){
           try{
