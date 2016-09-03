@@ -6,20 +6,14 @@ function get_reason(eventEmitter){
 
   return function(data){
     return new Promise(function(resolve,reject){
+      let done=false;
       let http_options=options();
       http_options.url='http://pubsub2.codeforces.com/ws/'+data.uc+'/'+data.cc+'/'+data.pc+'?_=1472812847834&tag=&time=&eventid='
-
       const ws=new WebSocket(http_options.url);
-      var x={};
-      let done=false;
       ws.on('message', function(data, flags) {
 
 
-        // flags.binary will be set if a binary data is received.
-        // flags.masked will be set if the data was masked.
-        let test=JSON.parse(data);
-        var x=test.text;
-          var x=JSON.parse(x);
+        let x=JSON.parse(JSON.parse(data).text);
         let reason=x.d[6];
         let testcase=x.d[8];
         if(testcase>counter){
