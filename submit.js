@@ -7,7 +7,7 @@ const cheerio = require('cheerio');
 
 
 
-function submit(file_path,problemId){
+function submit(file_path,problemId,eventEmitter){
 
 
   return function(data){
@@ -47,11 +47,11 @@ function submit(file_path,problemId){
 
 
         if(res.statusCode!='302'){
-          return reject('Code submitted before!')
+          return reject(new Error('You have submitted exactly the same code before'));
 
         }
 
-        console.log("<!>".blue+"   code submitted!".green)
+        eventEmitter.emit('submit',true);
         let $=cheerio.load(body);
 
         fs.writeFile('a.html',body)

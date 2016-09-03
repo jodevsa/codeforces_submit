@@ -4,7 +4,7 @@ const Promise = require('bluebird');
 const cheerio = require('cheerio');
 
 
-function login(username,password){
+function login(username,password,eventEmitter){
 
 
   return function(csrf_token){
@@ -21,9 +21,10 @@ function login(username,password){
 
         }
         if(res.statusCode=='200'){
-
+          
           return reject(new Error('wrong handle or password.'))
         }
+        eventEmitter.emit('login',true)
         resolve('lool');
       });
     })

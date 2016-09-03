@@ -16,7 +16,7 @@ function get_tokens(){
         return ;
       }
       let $=cheerio.load(body);
-      var csrf_token;
+      let csrf_token;
       $('meta').map(function(n,el){
         if($(el).attr('name')=='X-Csrf-Token'){
           csrf_token=$(el).attr('content');
