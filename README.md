@@ -19,7 +19,7 @@
     npm install -g
 #####  4-now you can submit your code using cf command
 #
-    cf problem_name <problem> <solution path>
+    cf <problem> <solution path>
 
 
 ## Example:
