@@ -1,4 +1,5 @@
-#!/usr/bin/env node
+'use strict'
+
 
 const get_results = require('./get_results');
 const get_submission_token = require('./get_submission_token');

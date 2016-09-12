@@ -1,3 +1,5 @@
+'use strict'
+
 const request = require('request').defaults({jar:true});
 const options = require('./http_options');
 const Promise = require('bluebird');
@@ -21,7 +23,7 @@ function login(username,password,eventEmitter){
 
         }
         if(res.statusCode=='200'){
-          
+
           return reject(new Error('wrong handle or password.'))
         }
         eventEmitter.emit('login',true)

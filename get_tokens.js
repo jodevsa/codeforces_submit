@@ -1,3 +1,5 @@
+'use strict'
+
 const request = require('request').defaults({jar:true});
 const options = require('./http_options');
 const Promise = require('bluebird');

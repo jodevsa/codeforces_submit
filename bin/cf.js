@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict'
+
 const submit_code = require('../index');
 const colors=require('colors')
 const readline = require('readline');

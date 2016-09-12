@@ -1,3 +1,5 @@
+'use strict'
+
 function options(){
   const options={
     gzip:true,
