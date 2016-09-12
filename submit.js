@@ -56,8 +56,6 @@ function submit(file_path,problemId,eventEmitter){
         eventEmitter.emit('submit',true);
         let $=cheerio.load(body);
 
-        fs.writeFile('a.html',body)
-
 
         resolve(data);
       })
