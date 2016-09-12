@@ -1,9 +1,11 @@
 {
   "name": "codeforces_submit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
-  "bin" : { "cf" : "./bin/cf.js"},
+  "bin": {
+    "cf": "./bin/cf.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +16,6 @@
     "cheerio": "^0.22.0",
     "request": "^2.74.0",
     "ws": "^1.1.1",
-    "colors":""
+    "colors": ""
   }
 }
